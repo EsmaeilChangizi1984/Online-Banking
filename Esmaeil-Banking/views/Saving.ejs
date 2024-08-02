@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: burlywood;
+            margin: 0;
+            padding: 0;
+            display: grid;
+        }
+
+        #dive {
+            background-color: cadetblue;
+            width: 350px;
+            margin: auto;
+            border-radius: 4mm;
+            justify-content: center;
+            margin-top: 3cm;
+            padding-top: .3cm;
+            height: 5cm;
+        }
+
+        #container {
+            height: 0vh;
+        }
+    </style>
+</head>
+
+<body>
+    <%- include("partials/header.ejs") %>
+        <div id="container">
+
+            <div id="dive">
+                <form action="/Saving.ejs" method="POST">
+                    <label for="saving"> Amount to Saving Account: </label>
+                    <input type="text" id="saving" name="savingAmount"
+                        style="border-radius: 2mm; height: .7cm; "><br><br>
+                    <hr>
+                    <input
+                        style="border-radius: 3mm; background-color: grey; justify-content: center;  margin-left: 3cm; margin-top: 1.5cm;"
+                        type="submit" name="submit" value="submit"><span></span>
+                    <input style="border-radius: 3mm; background-color: grey; justify-content: center; " type="submit"
+                        value="cancel" name="cancel">
+                </form>
+            </div>
+        </div>
+        <%- include("partials/footer.ejs") %>
+
+</body>
+
+</html>

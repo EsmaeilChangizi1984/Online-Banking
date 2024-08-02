@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Document</title>
+    <style>
+        body {
+            background-color: burlywood;
+            width: 100vw;
+            height: 600px;
+            overflow: auto;
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+
+        h3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* form {} */
+
+        label {
+            font-weight: 600;
+        }
+
+        #div {
+            height: 0vh;
+        }
+
+        #dive {
+            background-color: cadetblue;
+            width: 350px;
+            margin: auto;
+            border-radius: 4mm;
+            height: 200px;
+            justify-content: center;
+            margin-top: .7cm;
+            padding-top: .3cm;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <%- include("partials/header.ejs") %>
+        <h3>
+            Welcome To Your Online Banking <%= customerName %>
+        </h3>
+        <hr>
+        <div id="div">
+            <h4>Checking Account Balance: <%= account.checkingBalance %>
+            </h4>
+            <hr>
+            <h4>Credit Account Balance: <%= account.creditBalance%>
+            </h4>
+            <hr>
+            <h4>Saving Account Balance: <%= account.savingBalance%>
+            </h4>
+            <hr>
+            <div id="dive">
+                <form action="/home.ejs" method="POST">
+                    <input type="radio" id="deposit" name="banking" value="Deposit">
+                    <label for="deposit">Deposit</label><br><br>
+                    <input type="radio" id="withdrawal" name="banking" value="Withdrawal">
+                    <label for="withdrawal">Withdrawal</label><br><br>
+                    <input type="radio" id="save" name="banking" value="Save">
+                    <label for="save">Saving investment</label>
+                    <br><br>
+                    <hr>
+                    <input
+                        style="border-radius: 3mm; background-color: grey; justify-content: center; align-items: center; margin-left: 3.5cm; margin-top: .5cm;"
+                        type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+        <%- include("partials/footer.ejs") %>
+</body>
+
+</html>
